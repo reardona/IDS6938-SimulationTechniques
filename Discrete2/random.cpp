@@ -13,7 +13,7 @@
 int main()
 {
 	// Get a random seed
-	
+
 	//use a random device
 	std::random_device rd;
 
@@ -31,17 +31,22 @@ int main()
 	//std::mt19937_64 e2;
 	//e2.seed(ss);
 
-	
+
 
 	//  2) - Change distribution types
 	std::uniform_real_distribution<> dist(0, 100);  // example of a uniform distribution
+	
 	//std::normal_distribution<> dist(50,10);    // example of a normal distribution
+		//Additional distributions that I added:
 
+		//std::chi_squared_distribution<double> dist(3.0); // example of a chi squared distribution
+		//std::exponential_distribution<double> dist(.1);
+		//std::poisson_distribution<int> dist(12.0); //example of a poisson distribution //pass average value
 
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 100000;  // number of values generated
+	unsigned int N = 50000;  // number of values generated
 	double randomValue;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
@@ -49,19 +54,20 @@ int main()
 
 	for (unsigned int i = 0; i < N; ++i) {
 		randomValue = generator();
-		
+
 		++hist[std::round(randomValue)]; // count the values
+
 		raw.push_back(randomValue);  //push the raw values
 	}
 
 	for (auto p : hist) {
-		
-		// Uncomment if you want to see the values
-		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-		//	<< p.first << " -  "<< p.second << std::endl;
 
+		// Uncomment if you want to see the values
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "  " << std::string(p.second / (N/500), '*') << std::endl;
+		<< p.first << " -  "<< p.second << std::endl;
+
+		/*std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+		<< p.first << "  " << std::string(p.second / (N / 50), '*') << std::endl;*/
 
 	}
 
@@ -71,7 +77,7 @@ int main()
 	myfile.open("histogram_results.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "\t" << p.second  << std::endl;
+			<< p.first << "," << p.second << std::endl;
 	}
 	myfile.close();
 
@@ -92,12 +98,13 @@ int main()
 
 	std::vector<double> diff(raw.size());
 	std::transform(raw.begin(), raw.end(), diff.begin(),
-	std::bind2nd(std::minus<double>(), mean));
+		std::bind2nd(std::minus<double>(), mean));
 	double sq_sum = std::inner_product(diff.begin(), diff.end(), diff.begin(), 0.0);
 	double stdev = std::sqrt(sq_sum / raw.size());
 	myfile << "stdev: " << stdev << std::endl;
 	std::cout << "stdev: " << stdev << std::endl;
-	
+
+	int x; std::cin >> x;
 	myfile.close();
 
 }

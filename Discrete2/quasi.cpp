@@ -46,7 +46,7 @@ int main()
 	//uint64_t timeSeed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 	//std::seed_seq ss{ uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed >> 32) };
 	// 2 different ways to get a random starting seed
-	//seed = rd();
+	seed = rd();
 	//seed = ss;
 
 
@@ -61,7 +61,7 @@ int main()
 	for (unsigned int i = 0; i < N; ++i) {
 		randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
 
-		++hist[std::round(randomValue)]; // count the values
+		++hist[std::round(randomValue+.5f)]; // count the values
 		raw.push_back(randomValue);  //push the raw values
 	}
 

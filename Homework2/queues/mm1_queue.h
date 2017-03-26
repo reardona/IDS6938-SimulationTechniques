@@ -148,16 +148,19 @@ public:
     void add_external_arrival();
     void set_seed(double arr, double serv);
     
-    void output() const
+    void output(char*filename) const
     {
-       cout << "Arrivals: " << arrivals_ << " Services: " << services_ << endl;
-       cout << "Within 90\% CI? " << (is_within_confidence_interval()?"true":"false") << endl;
-       cout << "Mean Response Time: " << get_mean_response_time() << " [" << get_expected_response_time() << "] " << endl;
-       cout << "Mean Waiting Time: " << get_mean_waiting_time() << " [" << get_expected_waiting_time() << "] " << endl;
-       cout << "Mean Queue Length: " << get_mean_queue_length() << " [" << get_expected_queue_length() << "] " << endl;
-       cout << "Mean Number of Customers: " << get_mean_number_customers() << " [" << get_expected_number_customers() << "] " << endl;
-       cout << "Server Utilization: " << get_server_utilization() << " [" << get_expected_server_utilization() << "] " << endl;
-       cout << "Server Idle: " << get_idle_prob() << " [" << get_expected_idle_prob() << "] " << endl;
+		std::ofstream myfile;
+		myfile.open(filename);
+		myfile << "Arrivals: " << arrivals_ << " Services: " << services_ << endl;
+		myfile << "Within 90\% CI? " << (is_within_confidence_interval()?"true":"false") << endl;
+		myfile << "Mean Response Time: " << get_mean_response_time() << " [" << get_expected_response_time() << "] " << endl;
+		myfile << "Mean Waiting Time: " << get_mean_waiting_time() << " [" << get_expected_waiting_time() << "] " << endl;
+		myfile << "Mean Queue Length: " << get_mean_queue_length() << " [" << get_expected_queue_length() << "] " << endl;
+		myfile << "Mean Number of Customers: " << get_mean_number_customers() << " [" << get_expected_number_customers() << "] " << endl;
+		myfile << "Server Utilization: " << get_server_utilization() << " [" << get_expected_server_utilization() << "] " << endl;
+		myfile << "Server Idle: " << get_idle_prob() << " [" << get_expected_idle_prob() << "] " << endl;
+		myfile.close();
     }
     
     void plot_results_output() const
