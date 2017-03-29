@@ -14,7 +14,7 @@
 
 # define DIM_MAX 2
 
-int dim_num = 1;
+int dim_num = 2;
 float *r;
 int seed;
 int seed_in;
@@ -57,22 +57,32 @@ int main()
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
 
+	for (int i = 0; i < 1000; i++) {
+		getNDimQuasiRandomNumber(&seed, dim_num, r);
+	}
+
 
 	for (unsigned int i = 0; i < N; ++i) {
-		randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
-
-		++hist[std::round(randomValue+.5f)]; // count the values
+		//randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
+		getNDimQuasiRandomNumber( &seed, dim_num, r);
+		randomValue = r[0] * 100;
+		++hist[std::round(randomValue)]; // count the values
 		raw.push_back(randomValue);  //push the raw values
+
+		randomValue = r[1] * 100;
+		++hist[std::round(randomValue)]; // count the values
+		raw.push_back(randomValue);  //push the raw values
+		//seed = rd();
 	}
 
 	for (auto p : hist) {
 
-		//Uncomment if you want to see the values
-		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-		<< p.first << " -  "<< p.second << std::endl;
+		// Uncomment if you want to see the values
+		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+		//	<< p.first << " -  "<< p.second << std::endl;
 
-//		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-			//<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
+		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+			<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
 
 	}
 
