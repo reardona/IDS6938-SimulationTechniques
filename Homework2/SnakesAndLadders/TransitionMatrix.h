@@ -230,9 +230,9 @@ void SetTransitionMatrix()
 	TransitionMatrix(95, 99) = 0;		TransitionMatrix(95, 70) = prob;
 	TransitionMatrix(96, 99) = 0;		TransitionMatrix(96, 70) = prob;
 	TransitionMatrix(97, 99) = 0;		TransitionMatrix(97, 70) = prob;
-	TransitionMatrix(98, 99) = 0;		TransitionMatrix(98, 70) = prob;//Snaks =^-^=
+	TransitionMatrix(98, 99) = 0;		TransitionMatrix(98, 70) = prob;//Snaks =^-^= */
 
-	/*double rowSum; //this is the check
+	/* double rowSum; //this is the check
 	for (int i = 0; i < TransitionMatrix.rows(); ++i)
 	{
 		rowSum = 0;
@@ -250,7 +250,7 @@ void SetTransitionMatrix()
 	myfile.open("LuluSnek.txt");
 	myfile << TransitionMatrix;
 	myfile.close();
-	//std::cout << std::setprecision(2) << std::setw(2) << TransitionMatrix << std::endl;
+	std::cout << std::setprecision(2) << std::setw(2) << TransitionMatrix << std::endl;
 
 	//int x;
 	//std::cin >> x;

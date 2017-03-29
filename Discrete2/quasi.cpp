@@ -52,7 +52,7 @@ int main()
 
 
 	// 3) Play with N
-	unsigned int N = 100000;  // number of values generated
+	unsigned int N = 500;  // number of values generated
 	double randomValue;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
@@ -67,12 +67,12 @@ int main()
 
 	for (auto p : hist) {
 
-		// Uncomment if you want to see the values
-		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-		//	<< p.first << " -  "<< p.second << std::endl;
-
+		//Uncomment if you want to see the values
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
+		<< p.first << " -  "<< p.second << std::endl;
+
+//		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+			//<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
 
 	}
 
