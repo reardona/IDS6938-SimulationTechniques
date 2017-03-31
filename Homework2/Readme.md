@@ -203,13 +203,13 @@ N=500
 
 * Random numbers were generated to produce a unit-square & circle for 5 different RNGs with a varied n. 
 
-![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
+![ .png]( https://www.dropbox.com/s/by1t1x2bl22qd3h/de_2.png?dl=0&raw=1)
 
 ---
 
 * Random numbers were generated to produce a unit-square & circle for 5 different distributions with a varied n.
 
-
+![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
 ---
 
 # Part 2
