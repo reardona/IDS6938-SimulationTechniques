@@ -213,7 +213,12 @@ N=500
 
 ![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
 
-[RNG Analysis](https://www.dropbox.com/s/tnjhdi0jtf65l0r/Part1_RNG%20Analysis_b.xlsx?dl=0 "Part1_RNG Analysis_b")
+
+I used Excel to run my analysis and generate charts. Here are my links:
+|Analysis| Square/Circle Generation |
+|----|----|
+|[RNG Analysis](https://www.dropbox.com/s/tnjhdi0jtf65l0r/Part1_RNG%20Analysis_b.xlsx?dl=0 "Part1_RNG Analysis_b")|[RNG_CIRC_SQR](https://www.dropbox.com/s/5it6zgd5670nvtk/RNG_CIRC_SQR.xlsx?dl=0)|
+|[Part1_Distribution Analysis_a](https://www.dropbox.com/s/o8ouuo7839tknqj/Part1_Distribution%20Analysis_a.xlsx?dl=0)|[Distribution_CIR_SQR ](https://www.dropbox.com/s/ecf52t4alcqwaze/Distribution_CIR_SQR.xlsx?dl=0)|
 
 
 ---
