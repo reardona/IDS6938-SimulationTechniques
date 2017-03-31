@@ -3,7 +3,9 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 [University of Central Florida](http://www.ist.ucf.edu/grad/)
-This is the framework for homework #2. 
+This is the framework for homework #2.
+
+ 
 # Discrete-Event Simulation-Ashley Reardon (*I will be taking 3!! extra days to finish this assignment*) Now due 3/31/11:59pm =^^-^-^=
 
 
@@ -312,9 +314,9 @@ According to these percentages, it is possible to win the game in as few as 23 m
 
 * B. An analysis of the Snakes & Ladders game was conducted using a Markov Chain simulation to determine the modal number of moves required to finish the game.
 
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/uhhtj8qecoyvx0l/S_L_MODAL.png?dl=0&raw=1)
 
-A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 30 rolls the probability is the highest at 0.151241%, therefore the modal number of moves to finish the game is 30.
+A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 19 rolls the probability is the highest at 0.036511%, therefore the modal number of moves to finish the game is 19.
 
 An analysis of the Snakes & Ladders game was conducted using a Discrete Time Markov Chain simulation to determine the percentage of landing on X square after N rolls. I created a heat map to visualize the results.
 
@@ -322,6 +324,22 @@ An analysis of the Snakes & Ladders game was conducted using a Discrete Time Mar
 ![ .png](https://www.dropbox.com/s/tkpggiy1wtpq95r/HMS_50.png?dl=0&raw=1)
 ![ .png]( https://www.dropbox.com/s/qnedknx8qvajlck/HMS_75.png?dl=0&raw=1)
 
-According to these percentages, it is possible to win the game in as few as 23 moves. However, the percentage is really small at 0.016%.
+According to these percentages, it is possible to win the game in as few as 8 moves. However, the percentage is really small at 0.004%.
 
 ![ .png]( https://www.dropbox.com/s/wqj56xususgdtwt/Graph%20Snake.png?dl=0&raw=1)
+
+---
+# Part 3
+
+A discrete event simulation was created for an Orlando airport based on the code provided from Piazza. 
+
+stats.
+
+---
+
+This simulation was replicated using AnyLogic. 
+
+# Part 4
+
+1. A 2D visualization was created in AnyLogic for Part 3.
+2. A 3D visualization was created in AnyLogic for Part 3.
