@@ -14,53 +14,71 @@ A/B. Five different random number engines were varied using a uniform distributi
 Mersenne Twister:
 
 N=60
+
 ![MT_UD60.png](https://www.dropbox.com/s/radf8c2djvk3yhd/MT_UD60.png?dl=0&raw=1)
 
 N=100
+
 ![MT100.png](https://www.dropbox.com/s/3l5vxdnmmphwsbj/MT100.png?dl=0&raw=1)
 
 N=250
+
 ![ .png](https://www.dropbox.com/s/rutmk77j79qe2nu/MT500.png?dl=0&raw=1)
 
 Knuth:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/mlgwzb3mt6gjop3/KH60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png](https://www.dropbox.com/s/yrznrcpvxbpeenl/KH00.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/360penyqz2ixdu0/KH500.png?dl=0&raw=1)|
 
 Minimal Standard:
 
 N=60
+
 ![ .png]( https://www.dropbox.com/s/n90v8wtmlj3gxwq/MSTD_60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/zy2olsuo7jgpn9q/MSTD_100.png?dl=0&raw=1) 
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/qn5nrsa1k3jb0vw/MSTD_500.png?dl=0&raw=1)
 
-RANLUX:(IP)
+RANLUX:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/n4swj038p4qhplt/RL_60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/fdblvu5dee22ybq/RLC_100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/r4k5nnlirydsd6e/RL_500.png?dl=0&raw=1)|
 
-Sobol:(IP)
+Sobol:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/sotupintdfa6typ/SO_60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/62pf6954rms3ehp/SO_100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/gwohxjxwjnat6qi/SO_500.png?dl=0&raw=1)|
 
 ---
@@ -68,54 +86,75 @@ N=500
 Chi-Square Analysis for Uniformity
 
 Mersenne Twister:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/lqjm2yj97hkjgdk/MTC60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/6vbzvoz4p1x0kkw/MT_Chi_UD100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/b9j1wtq342a8dgy/MT_UD_CHI_500.png?dl=0&raw=1)|
 
 Knuth:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/oda190g4ejntydd/KC60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/paa45dur6tymk9j/KC100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/0jbs92ywbhvjsum/KC500.png?dl=0&raw=1)
 
 Minimal Standard:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/nrxagwfc877rvuq/MSTD_CHI_60tbl.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/1dugcu2v5nfbneo/MSTD_CHI_100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/dzwu7jopavye9qt/MSTD_500_CHI.png?dl=0&raw=1)
 
 RANLUX:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/j1043h4ob4cldop/RLCh_60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/t4p6vecrj9m31c9/RLCh_100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/enkdez1cuvr66pv/RLCh_500.png?dl=0&raw=1)
 
 Sobol:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/st74te4i3suenl0/SO_C_60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/akgwuzsm4ai578i/SO_C_100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/jse84rfcjogdi07/SO_C_500.png?dl=0&raw=1)
+
 
 ---
 C. Five different distributions were varied using the Mersenne Twister RNG. A Chi-Square test was used (ATTEMPTED!) to test for Goodness of fit. N was varied 3 times (60, 100, 500).
@@ -151,77 +190,94 @@ The construct validity in expected values caused each Chi-square test to fail th
 On a less defined scale, the frequencies of the raw values can be compared to the frequencies of the expected values to gain insight on functionality of the different distributions. For most distributions the raw frequencies had a similar curve to what was expected. As n increased, the strength of the relationship slightly increased.
 
 Normal Distribution:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/ailg2wal0bovg82/NML60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/0dohq5h5peh49ju/NML100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/q7tak1cqiptdg9h/NML500.png?dl=0&raw=1)|
 
 Chi-Squared Distribution:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/b5f9p70imx8xsj4/CSQ60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/45gwhf8roglm8qm/CSQ100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/du42oapyvhzo5a9/CSQ500.png?dl=0&raw=1)
 
 Exponential Distribution:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/io7kgeqhp7kzyvi/EXP60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/p8v8hgx22kkeblz/EXP100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/5jon9zc1h6bfngg/EXP500.png?dl=0&raw=1)
 
 Poisson Distribution:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/7aqa50akdgo7zhh/POIS60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/vmb78urr9cxtqxc/POIS100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/5fg8320o9lurk8l/POIS500.png?dl=0&raw=1)
 
 Gamma Distribution:
+
 N=60
+
 ![ .png]( https://www.dropbox.com/s/p3yn7u6v5jeiwtb/GAA60.png?dl=0&raw=1)
 
 N=100
+
 ![ .png]( https://www.dropbox.com/s/md4d2w8jgk5s1gu/GAA100.png?dl=0&raw=1)
 
 N=500
+
 ![ .png]( https://www.dropbox.com/s/seur6etogn5iaj1/GAA500.png?dl=0&raw=1)
 
 
 ---
 
-* Random numbers were generated to produce a unit-square & circle for 5 different RNGs with a varied n. 
+Random numbers were generated to produce a unit-square & circle for 5 different RNGs with a varied n. 
 
 ![ .png]( https://www.dropbox.com/s/by1t1x2bl22qd3h/de_2.png?dl=0&raw=1)
 
 ---
 
-* Random numbers were generated to produce a unit-square & circle for 5 different distributions with a varied n.
+Random numbers were generated to produce a unit-square & circle for 5 different distributions with a varied n.
 
 ![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
-
+---
 
 I used Excel to run my analysis and generate charts. Here are my links:
 |Analysis| Square/Circle Generation |
 |----|----|
 |[RNG Analysis](https://www.dropbox.com/s/tnjhdi0jtf65l0r/Part1_RNG%20Analysis_b.xlsx?dl=0 "Part1_RNG Analysis_b")|[RNG_CIRC_SQR](https://www.dropbox.com/s/5it6zgd5670nvtk/RNG_CIRC_SQR.xlsx?dl=0)|
 |[Part1_Distribution Analysis_a](https://www.dropbox.com/s/o8ouuo7839tknqj/Part1_Distribution%20Analysis_a.xlsx?dl=0)|[Distribution_CIR_SQR ](https://www.dropbox.com/s/ecf52t4alcqwaze/Distribution_CIR_SQR.xlsx?dl=0)|
-
-
----
 
 # Part 2
 
@@ -235,17 +291,37 @@ I used Excel to run my analysis and generate charts. Here are my links:
 
 ![ .png]( https://www.dropbox.com/s/11icr08p8vy5qha/NullM.png?dl=0&raw=1)
 
-A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 30 rolls the probability is the highest at 0.151241%. (repeat x30) for modal.
+A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 30 rolls the probability is the highest at 0.151241%, therefore the modal number of moves to finish the game is 30.
 
-An analysis of the null game was conducted using a Discrete Time Markov Chain simulation to determine the modal number of moves required to finish the game.
+An analysis of the Null game was conducted to determine the percentage of landing on X square after N rolls. I created a heat map to visualize the results.
 
-* C. A null state game transition matrix was created for the classic game Snakes and Ladders.
+![ .png]( https://www.dropbox.com/s/2dyv5albyz1oh4x/HM_25.png?dl=0&raw=1)
+![ .png]( https://www.dropbox.com/s/1bdbc0anczi463l/HM_26-50.png?dl=0&raw=1)
+![ .png]( https://www.dropbox.com/s/ohfr24wbf37i3ap/HM_51-75.png?dl=0&raw=1)
+![ .png]( https://www.dropbox.com/s/oyqppakasu9pdx4/HM_76-99.png?dl=0&raw=1)
+
+According to these percentages, it is possible to win the game in as few as 23 moves. However, the percentage is really small at 0.016%.
+
+![ .png]( https://www.dropbox.com/s/899m4i0r4pernja/Graph%20Null.png?dl=0&raw=1)
+
+* C. A transition matrix was created for the classic game Snakes and Ladders.
 
 |Beginning|End|
 | ---- | ---|
 |![ .png]( https://www.dropbox.com/s/dbybvtot64gfbwe/SL_begin.png?dl=0&raw=1)| ![ .png]( https://www.dropbox.com/s/vfu6vb53bwpza3a/SL_end.png?dl=0&raw=1)|
 
-An analysis of the Snakes & Ladders game was conducted using a Markov Chain simulation to determine the modal number of moves required to finish the game.
+* B. An analysis of the Snakes & Ladders game was conducted using a Markov Chain simulation to determine the modal number of moves required to finish the game.
 
-An analysis of the Snakes & Ladders game was conducted using a Discrete Time Markov Chain simulation to determine the modal number of moves required to finish the game.
+![ .png]( &raw=1)
 
+A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 30 rolls the probability is the highest at 0.151241%, therefore the modal number of moves to finish the game is 30.
+
+An analysis of the Snakes & Ladders game was conducted using a Discrete Time Markov Chain simulation to determine the percentage of landing on X square after N rolls. I created a heat map to visualize the results.
+
+![ .png]( https://www.dropbox.com/s/ufkqyasfww99dkk/HMS_25.png?dl=0&raw=1)
+![ .png](https://www.dropbox.com/s/tkpggiy1wtpq95r/HMS_50.png?dl=0&raw=1)
+![ .png]( https://www.dropbox.com/s/qnedknx8qvajlck/HMS_75.png?dl=0&raw=1)
+
+According to these percentages, it is possible to win the game in as few as 23 moves. However, the percentage is really small at 0.016%.
+
+![ .png]( https://www.dropbox.com/s/wqj56xususgdtwt/Graph%20Snake.png?dl=0&raw=1)
