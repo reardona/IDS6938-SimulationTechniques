@@ -12,6 +12,7 @@ This is the framework for homework #2.
 A/B. Five different random number engines were varied using a uniform distribution for values between [0-100]. A Chi-Square test was used to test for uniformity. N was varied 3 times (60, 100, 500).
 
 Mersenne Twister:
+
 N=60
 ![MT_UD60.png](https://www.dropbox.com/s/radf8c2djvk3yhd/MT_UD60.png?dl=0&raw=1)
 
@@ -32,6 +33,7 @@ N=500
 ![ .png]( https://www.dropbox.com/s/360penyqz2ixdu0/KH500.png?dl=0&raw=1)|
 
 Minimal Standard:
+
 N=60
 ![ .png]( https://www.dropbox.com/s/n90v8wtmlj3gxwq/MSTD_60.png?dl=0&raw=1)
 
@@ -210,6 +212,10 @@ N=500
 * Random numbers were generated to produce a unit-square & circle for 5 different distributions with a varied n.
 
 ![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
+
+[RNG Analysis](https://www.dropbox.com/s/tnjhdi0jtf65l0r/Part1_RNG%20Analysis_b.xlsx?dl=0 "Part1_RNG Analysis_b")
+
+
 ---
 
 # Part 2
