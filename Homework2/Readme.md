@@ -6,7 +6,7 @@
 This is the framework for homework #2.
 
  
-# Discrete-Event Simulation-Ashley Reardon (*I will be taking 3!! extra days to finish this assignment*) Now due 3/31/11:59pm =^^-^-^=
+# Discrete-Event Simulation-Ashley Reardon (*I will be taking 3!! extra days to finish this assignment*) Now due 3/31/11:59pm =^-^=
 
 
 
@@ -295,7 +295,7 @@ I used Excel to run my analysis and generate charts. Here are my links:
 
 A probability loop was implemented to determine how likely the number of rolls would take the user to the last square. After 30 rolls the probability is the highest at 0.151241%, therefore the modal number of moves to finish the game is 30.
 
-An analysis of the Null game was conducted to determine the percentage of landing on X square after N rolls. I created a heat map to visualize the results.
+An analysis of the Null game was conducted using a Discrete Time Markov Chain simulation to determine the percentage of landing on X square after N rolls. I created a heat map to visualize the results.
 
 ![ .png]( https://www.dropbox.com/s/2dyv5albyz1oh4x/HM_25.png?dl=0&raw=1)
 ![ .png]( https://www.dropbox.com/s/1bdbc0anczi463l/HM_26-50.png?dl=0&raw=1)
@@ -333,13 +333,41 @@ According to these percentages, it is possible to win the game in as few as 8 mo
 
 A discrete event simulation was created for an Orlando airport based on the code provided from Piazza. 
 
-stats.
+Results for server utilization, idle prob, queue length, number of customers, and error range check are included in the charts below. All queues met the expected values.
+
+Check-in:
+
+![ .png]( https://www.dropbox.com/s/vfp9llaj6cumbds/Checkin.png?dl=0&raw=1)
+
+Security Line 1:
+
+![ .png]( https://www.dropbox.com/s/kal01kr6vbsf3yp/S1.png?dl=0&raw=1)
+
+Security Line 2:
+
+![ .png]( https://www.dropbox.com/s/l5ia9yky74f3iv7/S2.png?dl=0&raw=1)
+
+Security Line 3:
+
+![ .png]( https://www.dropbox.com/s/102rd57nw5yhk9g/S3.png?dl=0&raw=1)
+
+Boarding:
+
+![ .png]( https://www.dropbox.com/s/bpzo60b068vgkj8/Boarding.png?dl=0&raw=1)
 
 ---
 
 This simulation was replicated using AnyLogic. 
 
+ ![ .png]( https://www.dropbox.com/s/7pnox4b7jfhv8qp/AL.png?dl=0&raw=1)
+ 
+ ![ .png]( https://www.dropbox.com/s/wcjkw5skdufv3jj/ALAYS.png?dl=0&raw=1)
+ 
+  ![ .png](https://www.dropbox.com/s/niyg7s5l4tw1lqv/AL2.png?dl=0&raw=1)
+ 
 # Part 4
 
 1. A 2D visualization was created in AnyLogic for Part 3.
+ ![ .png]( https://www.dropbox.com/s/99pfnpmbrl4u5xr/2D.png?dl=0&raw=1)
 2. A 3D visualization was created in AnyLogic for Part 3.
+![ .png]( https://www.dropbox.com/s/vzr8n01sv232j7x/6.png?dl=0&raw=1)
