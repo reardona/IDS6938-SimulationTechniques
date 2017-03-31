@@ -4,13 +4,12 @@
 
 [University of Central Florida](http://www.ist.ucf.edu/grad/)
 This is the framework for homework #2. 
+# Discrete-Event Simulation-Ashley Reardon (*I will be taking 3!! extra days to finish this assignment*) Now due 3/31/11:59pm =^^-^-^=
 
-# Discrete-Event Simulation-Ashley Reardon (*I will be taking 2 extra days to finish this assignment*)
 
-<<
 
 # Part 1: Empirical Tests of Randomness
-* A/B. Five different random number engines were varied using a uniform distribution for values between [0-100]. A Chi-Square test was used to test for uniformity. N was varied 3 times (60, 100, 500).
+A/B. Five different random number engines were varied using a uniform distribution for values between [0-100]. A Chi-Square test was used to test for uniformity. N was varied 3 times (60, 100, 500).
 
 Mersenne Twister:
 N=60
@@ -117,121 +116,101 @@ N=500
 ![ .png]( https://www.dropbox.com/s/jse84rfcjogdi07/SO_C_500.png?dl=0&raw=1)
 
 ---
-* C. Five different random number engines were varied using a uniform distribution for values between [0-100]. A Chi-Square test was used to test for Goodness of fit. N was varied 3 times (60, 100, 500).
+C. Five different distributions were varied using the Mersenne Twister RNG. A Chi-Square test was used (ATTEMPTED!) to test for Goodness of fit. N was varied 3 times (60, 100, 500).
+
+Similar to the Uniform distribution, a Chi-Square analysis was also conducted for these different distributions. However, since I was no longer testing for uniformity, it became challenging trying to figure out how to generate valid expected values for the goodness of fit test. Several methods were used.
+
+I started by utilizing functions in R for each distributions to generate expected values.
+* Chisquare: 
+* https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html 
+* Where: Exp <- 60*pchisq(2*c(1:9,999), df=3, ncp = 0, lower.tail = TRUE)
+* Exponential: 
+* https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Exponential.html
+* Where: Exp <-60*pexp(3*c(1:9, 9999), rate=.1, lower.tail= TRUE)
+* Poisson: 
+* https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Poisson.html
+* Where: Exp <- 60*ppois(2*c(1:9,9999), lambda=9, lower.tail = TRUE)
+* Gamma: 
+* https://stat.ethz.ch/R-manual/R-devel/library/stats/html/GammaDist.html
+* Where: Exp <-60*pgamma(2*c(1:9,9999), shape=2,scale=5, lower.tail=TRUE)
+* Normal:
+* https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Normal.html
+* Where: Exp <-60*pnorm(3*c(1:9,9999), mean=10, sd=4, lower.tail=TRUE)
+
+I then binned out these values in order to organize the frequencies of the raw data. I plotted the expected values into a bar graph in order to compare to what you would typically find based on these distributions. All of them except for Gamma and Poisson fit my expectations. 
+
+Due to lack of consistency, I sought out other methods of extracting valid expected numbers. I turned to Excel's built in distribution function for Gamma and Poisson and utilized Wiki to determine the parameters. This only describes the probability that the bin takes on a value less than the mean and therefore does not give me the expected values needed for the Chi-Square analysis.
+
+Gamma: =GAMMA.DIST(C4,2,2,)
+Poisson: =POISSON.DIST(C4,9,TRUE)
+
+The construct validity in expected values caused each Chi-square test to fail therefore further understanding and manipulation of both programs is needed for future analysis. 
+
+On a less defined scale, the frequencies of the raw values can be compared to the frequencies of the expected values to gain insight on functionality of the different distributions. For most distributions the raw frequencies had a similar curve to what was expected. As n increased, the strength of the relationship slightly increased.
 
 Normal Distribution:
 N=60
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/ailg2wal0bovg82/NML60.png?dl=0&raw=1)
 
 N=100
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/0dohq5h5peh49ju/NML100.png?dl=0&raw=1)
 
 N=500
-![ .png]( &raw=1)|
+![ .png]( https://www.dropbox.com/s/q7tak1cqiptdg9h/NML500.png?dl=0&raw=1)|
 
 Chi-Squared Distribution:
 N=60
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/b5f9p70imx8xsj4/CSQ60.png?dl=0&raw=1)
 
 N=100
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/45gwhf8roglm8qm/CSQ100.png?dl=0&raw=1)
 
 N=500
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/du42oapyvhzo5a9/CSQ500.png?dl=0&raw=1)
 
 Exponential Distribution:
 N=60
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/io7kgeqhp7kzyvi/EXP60.png?dl=0&raw=1)
 
 N=100
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/p8v8hgx22kkeblz/EXP100.png?dl=0&raw=1)
 
 N=500
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/5jon9zc1h6bfngg/EXP500.png?dl=0&raw=1)
 
 Poisson Distribution:
 N=60
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/7aqa50akdgo7zhh/POIS60.png?dl=0&raw=1)
 
 N=100
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/vmb78urr9cxtqxc/POIS100.png?dl=0&raw=1)
 
 N=500
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/5fg8320o9lurk8l/POIS500.png?dl=0&raw=1)
 
 Gamma Distribution:
 N=60
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/p3yn7u6v5jeiwtb/GAA60.png?dl=0&raw=1)
 
 N=100
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/md4d2w8jgk5s1gu/GAA100.png?dl=0&raw=1)
 
 N=500
-![ .png]( &raw=1)
+![ .png]( https://www.dropbox.com/s/seur6etogn5iaj1/GAA500.png?dl=0&raw=1)
+
 
 ---
 
-Chi-Square Analysis for Goodness of fit:
+* Random numbers were generated to produce a unit-square & circle for 5 different RNGs with a varied n. 
 
-Normal Distribution:
-N=60
-![ .png]( &raw=1)
-
-N=100
-![ .png]( &raw=1)
-
-N=500
-![ .png]( &raw=1)
-
-Chi-Squared Distribution:
-N=60
-![ .png]( &raw=1)
-
-N=100
-![ .png]( &raw=1)
-
-N=500
-![ .png]( &raw=1)
-
-Exponential Distribution:
-N=60
-![ .png]( &raw=1)
-
-N=100
-![ .png]( &raw=1)
-
-N=500
-![ .png]( &raw=1)
-
-Poisson Distribution:
-N=60
-![ .png]( &raw=1)
-
-N=100
-![ .png]( &raw=1)
-
-N=500
-![ .png]( &raw=1)
-
-Gamma Distribution:
-N=60
-![ .png]( &raw=1)
-
-N=100
-![ .png]( &raw=1)
-
-N=500
-![ .png]( &raw=1)
-
----
-
-* Random numbers were generated to produce a unit-square & circle for 5 different RNGs with a varied n.
-
-*Insert Table here*
+![ .png]( https://www.dropbox.com/s/5yhe6vzmseircsk/de_1.png?dl=0&raw=1)
 
 ---
 
 * Random numbers were generated to produce a unit-square & circle for 5 different distributions with a varied n.
+
+
+---
 
 # Part 2
 
@@ -258,5 +237,4 @@ An analysis of the null game was conducted using a Discrete Time Markov Chain si
 An analysis of the Snakes & Ladders game was conducted using a Markov Chain simulation to determine the modal number of moves required to finish the game.
 
 An analysis of the Snakes & Ladders game was conducted using a Discrete Time Markov Chain simulation to determine the modal number of moves required to finish the game.
-
 
