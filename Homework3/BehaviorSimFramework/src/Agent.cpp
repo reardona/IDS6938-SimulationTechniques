@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "Behavior.h"
 #include "Agent.h"
+#include <math.h>
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -266,36 +267,12 @@ void SIMAgent::Control()
 		Truncate(input[1], -SIMAgent::MaxTorque, SIMAgent::MaxTorque);
 
 		
-	}
-
-
-	/*
-	*	Update the state vector given derivative vector
-	*  Compute global position and store it in GPos
-	*  Perform validation check to make sure all values are within MAX values
-	*/
-	void SIMAgent::UpdateState()
-	{
-		for (int i = 0; i < dimState; i++) {
-			state[i] += deriv[i] * deltaT;
-		}
-		state[0] = 0.0;
-
-		ClampAngle(state[1], -M_PI, M_PI);
-		Truncate(state[2], -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
-
-		vec2 GVelocity;
-		GVelocity[0] = state[2] * cos(state[1]);
-		GVelocity[1] = state[2] * sin(state[1]);
-		GPos += GVelocity;
-
-		Truncate(GPos[0], -1.0 * env->groundSize, env->groundSize);
-		Truncate(GPos[1], -1.0 * env->groundSize, env->groundSize);
-
-		Truncate(state[3], -SIMAgent::MaxAngVel, SIMAgent::MaxAngVel);
-	}
-
 }
+
+
+
+
+
 
 /*
 *	Compute derivative vector given input and state vectors
@@ -303,10 +280,13 @@ void SIMAgent::Control()
 */
 void SIMAgent::FindDeriv()
 {
-	/*********************************************
+	/********************************************
 	// TODO: Add code here
 	*********************************************/
-
+	deriv[0] = input[0] / Mass; //is the force in local body coordinates divided by the mass
+	deriv[1] = input[1] / Inertia;  // the torque in local body coordinates divided by the mass
+	deriv[2] = state[2];
+	deriv[3] = state[3];
 }
 
 /*
@@ -316,10 +296,24 @@ void SIMAgent::FindDeriv()
 */
 void SIMAgent::UpdateState()
 {
-	/*********************************************
-	// TODO: Add code here
-	*********************************************/
+	for (int i = 0; i < dimState; i++)
+	{
+		state[i] += deriv[i] * deltaT;
+	}
+	state[0] = 0.0;
 
+	ClampAngle(state[1]);
+	Truncate(state[2], -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
+
+	vec2 GVelocity;
+	GVelocity[0] = state[2] * cos(state[1]);
+	GVelocity[1] = state[2] * sin(state[1]);
+	GPos += GVelocity;
+
+	Truncate(GPos[0], -1.0 * env->groundSize, env->groundSize);
+	Truncate(GPos[1], -1.0 * env->groundSize, env->groundSize);
+
+	Truncate(state[3], -SIMAgent::MaxAngVel, SIMAgent::MaxAngVel);
 }
 
 /*

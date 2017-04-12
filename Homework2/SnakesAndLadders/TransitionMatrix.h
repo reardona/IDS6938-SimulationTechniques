@@ -8,7 +8,7 @@ double prob = 1.0/6.0;  //TODO
 
 
 
-
+//NULL
 /*void SetTransitionMatrix()
 {
 	TransitionMatrix.setZero();
@@ -68,7 +68,7 @@ double prob = 1.0/6.0;  //TODO
 
 	
 }*/
-
+//SNAKES AND LADDERS
 void SetTransitionMatrix()
 {
 	TransitionMatrix.setZero();
