@@ -330,16 +330,17 @@ vec2 SIMAgent::Seek()
 	// TODO: Add code here
 	*********************************************/
 	
-	vec2 tmp;
-	double Dvelo;
-	tmp = goal - GPos;
+	vec2 tmp; //declare
+	double Dvelo; //allocate memory
 
-	tmp.Normalize();
-	Dvelo = atan2(tmp[1], tmp[0]);
+	tmp = goal - GPos; // desired velocity
 
-	float Vn = SIMAgent::MaxVelocity;
+	tmp.Normalize(); //clean computation
+	Dvelo = atan2(tmp[1], tmp[0]); //new angle
 
-	return vec2(cos(Dvelo)* Vn, sin(Dvelo) * Vn);
+	float Vn = SIMAgent::MaxVelocity; //agent speed
+
+	return vec2(cos(Dvelo)* Vn, sin(Dvelo) * Vn); //conversion
 
 	//return temp;
 }
@@ -361,9 +362,10 @@ vec2 SIMAgent::Flee()
 	double Dvelo;
 	tmp = goal - GPos;
 
-	tmp.Normalize();
+	tmp.Normalize(); //?
+
 	Dvelo = atan2(tmp[1], tmp[0]);
-	Dvelo = Dvelo*M_PI;
+	Dvelo = Dvelo+M_PI; //return the opposite
 
 	float Vn = SIMAgent::MaxVelocity;
 
@@ -383,12 +385,26 @@ vec2 SIMAgent::Flee()
 */
 vec2 SIMAgent::Arrival()
 {
-	/*********************************************
+	/********************************************* =^-^=
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	vec2 Vd;
+	double Dvelo;
 
-	return tmp;
+	Vd = goal - GPos; //desired velocity
+
+	//Vd.Normalize();
+
+	Dvelo = atan2(Vd[1], Vd[0]); //derive the new angle the agent should be targeting
+
+	float vd = Vd.Length()*KArrival; //Agent speed
+
+	return vec2(cos(Dvelo)* vd, sin(Dvelo) * vd); //return the Cartesian coordinates
+
+	//return temp;
+	//vec2 tmp;
+
+	//return tmp;
 }
 
 /*
@@ -402,12 +418,27 @@ vec2 SIMAgent::Arrival()
 */
 vec2 SIMAgent::Departure()
 {
+	vec2 Vd;
+	double Dvelo;
+
+	Vd = goal - GPos; //desired velocity
+
+					  //Vd.Normalize();
+
+	Dvelo = atan2(Vd[1], Vd[0]); //derive the new angle the agent should be targeting
+	Dvelo = Dvelo + M_PI; //return the opposite (??)
+
+	float vd = Vd.Length()*KArrival; //Agent speed
+
+	return vec2(cos(Dvelo)* vd, sin(Dvelo) * vd); //return the Cartesian coordinates
+
+
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	//vec2 tmp;
 
-	return tmp;
+	//return tmp;
 }
 
 /*
