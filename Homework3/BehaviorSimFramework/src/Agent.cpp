@@ -339,7 +339,8 @@ vec2 SIMAgent::Seek()
 	tmp = goal - GPos; // desired velocity
 
 	tmp.Normalize(); //clean computation
-	thetad = atan2(tmp[1], tmp[0]); //new angle
+	thetad = atan2(tmp[1], tmp[0]) + M_PI;
+	//new angle
 
 	float Vn = SIMAgent::MaxVelocity; //agent speed
 
@@ -368,11 +369,11 @@ vec2 SIMAgent::Flee()
 	tmp.Normalize();
 
 	thetad = atan2(tmp[1], tmp[0]);
-	thetad = thetad + M_PI; //return the opposite
+	 //return the opposite
 
 	float Vn = SIMAgent::MaxVelocity;
 
-	return vec2(cos(thetad)* Vn, sin(thetad) * Vn);
+	return -vec2(cos(thetad)* Vn, sin(thetad) * Vn);
 
 	//return tmp;
 }
@@ -398,11 +399,12 @@ vec2 SIMAgent::Arrival()
 
 	//Vd.Normalize();
 
-	thetad = atan2(Vd[1], Vd[0]); //derive the new angle the agent should be targeting
+	thetad = atan2(Vd[1], Vd[0]);
+	thetad += M_PI;//derive the new angle the agent should be targeting
 
 	float vd = Vd.Length()*KArrival; //Agent speed
 
-	return vec2(cos(thetad)* vd, sin(thetad) * vd); //return the Cartesian coordinates
+	return -vec2(cos(thetad)* vd, sin(thetad) * vd); //return the Cartesian coordinates
 
   
   //vec2 tmp;
@@ -428,7 +430,7 @@ vec2 SIMAgent::Departure()
 	Vd.Normalize();
 
 	thetad = atan2(Vd[1], Vd[0]); //derive the new angle the agent should be targeting
-	thetad = thetad + M_PI; //return the opposite (??)
+	thetad = thetad;// +M_PI; //return the opposite (??)
 	//Truncate(Vd, 0, SIMAgent::MaxVelocity);
 	float vd = (1.0f / Vd.Length())*KDeparture; //Agent speed
 
@@ -455,11 +457,33 @@ vec2 SIMAgent::Wander()
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
+	vec2 Outer;
+	vec2 Inner;
+	float Vn = SIMAgent::MaxVelocity;
 	
+	// Get a random seed
 
-	vec2 tmp;
+	//use a random device
+	//std::random_device rd;
 
-	return tmp;
+	// 1) Change random number generators
+	//std::mt19937_64 engine(rd());
+	/*std::uniform_real_distribution<> dist(0, 2*M_PI);
+	std::default_random_engine generator;
+
+	float bigTheta = dist(generator);
+	float smallTheta = dist(generator);*/
+	float bigTheta = float(rand() % 360  - 180 ) / 180.0 * M_PI;
+	float smallTheta = float(rand() % 360 - 180) / 180.0 * M_PI;
+
+	Outer = vec2(cos(bigTheta)* Vn, sin(bigTheta) * Vn);
+	
+	Inner = vec2(cos(smallTheta)* Vn*.5, sin(smallTheta) * Vn*.5);
+
+	vec2 Dest = .5*(Outer + Inner);
+	thetad = atan2(Dest[1], Dest[0]);
+
+	return Dest;
 }
 
 /*
