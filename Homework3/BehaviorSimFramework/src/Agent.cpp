@@ -339,12 +339,12 @@ vec2 SIMAgent::Seek()
 	tmp = goal - GPos; // desired velocity
 
 	tmp.Normalize(); //clean computation
-	thetad = atan2(tmp[1], tmp[0]) + M_PI;
+	thetad = atan2(tmp[1], tmp[0]);
 	//new angle
 
-	float Vn = SIMAgent::MaxVelocity; //agent speed
+	vd = SIMAgent::MaxVelocity; //agent speed
 
-	return vec2(cos(thetad)* Vn, sin(thetad) * Vn); //conversion
+	return vec2(cos(thetad)* vd, sin(thetad) * vd); //conversion
 
 	//return tmp;
 }
@@ -368,12 +368,12 @@ vec2 SIMAgent::Flee()
 
 	tmp.Normalize();
 
-	thetad = atan2(tmp[1], tmp[0]);
+	thetad = atan2(tmp[1], tmp[0]) + M_PI;
 	 //return the opposite
 
-	float Vn = SIMAgent::MaxVelocity;
+	vd = SIMAgent::MaxVelocity;
 
-	return -vec2(cos(thetad)* Vn, sin(thetad) * Vn);
+	return vec2(cos(thetad)* vd, sin(thetad) * vd);
 
 	//return tmp;
 }
@@ -400,9 +400,9 @@ vec2 SIMAgent::Arrival()
 	//Vd.Normalize();
 
 	thetad = atan2(Vd[1], Vd[0]);
-	thetad += M_PI;//derive the new angle the agent should be targeting
+	//derive the new angle the agent should be targeting
 
-	float vd = Vd.Length()*KArrival; //Agent speed
+	vd = Vd.Length()*KArrival; //Agent speed
 
 	return -vec2(cos(thetad)* vd, sin(thetad) * vd); //return the Cartesian coordinates
 
@@ -430,9 +430,9 @@ vec2 SIMAgent::Departure()
 	Vd.Normalize();
 
 	thetad = atan2(Vd[1], Vd[0]); //derive the new angle the agent should be targeting
-	thetad = thetad;// +M_PI; //return the opposite (??)
+	thetad += M_PI;// +M_PI; //return the opposite (??)
 	//Truncate(Vd, 0, SIMAgent::MaxVelocity);
-	float vd = (1.0f / Vd.Length())*KDeparture; //Agent speed
+	 vd = (1.0f / Vd.Length())*KDeparture; //Agent speed
 
 	return vec2(cos(thetad)* vd, sin(thetad) * vd); //return the Cartesian coordinates
 	/*********************************************
@@ -459,7 +459,7 @@ vec2 SIMAgent::Wander()
 	*********************************************/
 	vec2 Outer;
 	vec2 Inner;
-	float Vn = SIMAgent::MaxVelocity;
+	vd = SIMAgent::MaxVelocity;
 	
 	// Get a random seed
 
@@ -476,9 +476,9 @@ vec2 SIMAgent::Wander()
 	float bigTheta = float(rand() % 360  - 180 ) / 180.0 * M_PI;
 	float smallTheta = float(rand() % 360 - 180) / 180.0 * M_PI;
 
-	Outer = vec2(cos(bigTheta)* Vn, sin(bigTheta) * Vn);
+	Outer = vec2(cos(bigTheta)* vd, sin(bigTheta) * vd);
 	
-	Inner = vec2(cos(smallTheta)* Vn*.5, sin(smallTheta) * Vn*.5);
+	Inner = vec2(cos(smallTheta)* vd*.5, sin(smallTheta) * vd*.5);
 
 	vec2 Dest = .5*(Outer + Inner);
 	thetad = atan2(Dest[1], Dest[0]);
@@ -511,19 +511,18 @@ vec2 SIMAgent::Avoid()
 /*
 *	Separation behavior
 *  SIMAgent::agents[i] gives the pointer to the ith agent in the environment
-*  Separation settings are in SIMAgent::RNeighborhood and SIMAgent::KSeperate
+*  Separation settings are in SIMAgent::RNeighborhood and SIMAgent::KSeparate
 *  You need to compute the desired velocity and desired orientation
 *  Store them into vd and thetad respectively
 *  return a vec2 that represents the goal velocity with its direction being thetad and its norm being vd
 */
 vec2 SIMAgent::Separation()
 {
+
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
 
-	return tmp;
 }
 
 /*
