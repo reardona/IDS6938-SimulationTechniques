@@ -3,7 +3,6 @@
 # Homework 3 : Agent based Simulation Assignment 
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
-
 # Homework 3
 ![Weirdartthing.png](https://www.dropbox.com/s/wkox40u0l7gkmbs/weird%20art%20thing.png?dl=0&raw=1)
 
@@ -152,5 +151,33 @@ Flocking & Leader Following: By using the previous behaviors described above, la
 
 # Part 2: Simulating a simple pedestrian flow
 a.	Create a maze:
+
 b.	Model and analyze a building:
+
+This simulation models the everyday activity occurring inside a favored city of mine that I’ve also lost thousands of virtual hours to; Stormwind City. 
+
+|![SW1.png](https://www.dropbox.com/s/16ew8wexjol0zn1/SW1.jpg?dl=0&raw=1)
+![SW5.png](https://www.dropbox.com/s/k3tq4io8q1kfmk4/SW5.jpg?dl=0&raw=1)
+![SW2.png](https://www.dropbox.com/s/4jmvqaidavs6069/SW2.jpg?dl=0&raw=1)
+
+Stormwind City exists inside the realm of World of Warcraft and serves as the capital city of the Alliance. While it was destroyed by the Horde during the First War, its citizens rebuilt the city with renewed enthusiasm causing Stormwind to becoming the most populated city in the world as well as the cultural and trade center of the Alliance. 
+![wow1.png](https://www.dropbox.com/s/nlsm0mau4mx6kjd/wow1.jpg?dl=0&raw=1)
+![wow2.png](https://www.dropbox.com/s/gfy0ddd2lsisqg5/wow2.jpg?dl=0&raw=1)
+![wow3.png](https://www.dropbox.com/s/lf6ghsl7634zd1w/wow3.jpg?dl=0&raw=1)
+
+Various businesses and services operate inside this city such as training centers for warriors, rogues, and hunters, flight trainers, guild vendors, portals, a library, and even a hairdresser (http://www.wowhead.com/stormwind-city).
+
+![SW6.png](https://www.dropbox.com/s/i3txyq3it8le2cw/SW6.jpg?dl=0&raw=1)
+![SW3.png](https://www.dropbox.com/s/j556pkjk3d4m262/SW3.jpg?dl=0&raw=1)
+![SW4.png](https://www.dropbox.com/s/9ngf103dvpylla1/SW4.jpg?dl=0&raw=1)
+
+I chose to model the city based off my own personal experience to include areas of high interest to see how the traffic changes according to major changes in the game, in order to explore their effects on queue times and traffic density. 
+
+ 4 major queue areas were simulated; Alchemy Training, The Bank, The Innkeeper, and The Auction House. I varied their probabilities based on my own observations in the game, with a lower probability of a player going to the Alchemy Trainer and Innkeeper, and a higher probability of a player going to the Bank and the Auction House. Additionally, 4 NPCs or self service operations were simulated; the Stable Master, the Mailbox, the Cooking Trainer, and the Weapons Master. Both the Stable Master and the Mailbox have a higher probability of being a target than the Cooking Trainer and Weapons Master. 2 different agents were also created to serve as my general population operating inside Stormwind City. While all Alliance races have access to this city, I chose to model two of my favorite races, Night Elfs and Dwarfs. Since Night Elfs have a significantly taller stature than their Dwarf companions, their base walking speed is faster and they will reach their targets faster than the Dwarfs, who are shorter and much stouter.
+|Night Elf|Dwarf|
+|---|---|
+|![Tyrandepng](https://www.dropbox.com/s/pf3azxi0wuc4d27/Tyrande.png?dl=0&raw=1)|![Brann-Bronzebeard2.png](https://www.dropbox.com/s/kfu2xrmb7eiq1zv/Brann-Bronzebeard2.jpg?dl=0&raw=1)|
+
+2 simulations were run. The first was modeled based of observations from the middle of an expansion, and the second was changed to account for the increased need to utilize the Auction House, Bank, and the Weapons Master after a new expansion due to the level cap increase and change in item values. It is hypothesized that traffic surrounding these ‘hot’ areas will increase along with queue times. 
+
 
