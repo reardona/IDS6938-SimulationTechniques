@@ -175,7 +175,7 @@ void SIMAgent::SetInitState(float pos[], float angle)
 	for (i = 0; i < dimInput; i++)
 		input[i] = 0.0;
 	state[1] = angle;
-	//thetad = 0.0f;
+	
 }
 
 void SIMAgent::Sense(int type)
@@ -591,13 +591,32 @@ vec2 SIMAgent::Alignment()
 */
 vec2 SIMAgent::Cohesion()
 {
+	int numNeighbors = 0; //starts the count with 0
+	vec2 sumPositions = vec2(0, 0);
+	for (auto agent : SIMAgent::agents)
+	{
+		if ((agent->GPos - this->GPos).SqrLength() < RNeighborhood*RNeighborhood) //loops through every agent in the neighborhood
+		{
+			sumPositions += agent->GPos;
+			numNeighbors++;
+		}
+	}
+
+	vec2 GoalPos = sumPositions / ((float)numNeighbors);
+
+	thetad = atan2(GoalPos[1], GoalPos[0]);
+	vd = SIMAgent::MaxVelocity;
+
+
+	return vd*GoalPos.Normalize();
+}
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
 	//vec2 tmp;
 
 	//return tmp;
-}
+
 
 /*
 *	Flocking behavior
@@ -608,6 +627,11 @@ vec2 SIMAgent::Cohesion()
 */
 vec2 SIMAgent::Flocking()
 {
+	vec2 Flock = SIMAgent::KSeparate*Separation() + KAlign*Alignment() + KCohesion*Cohesion();
+	thetad = atan2(Flock[1], Flock[0]);
+	vd = SIMAgent::MaxVelocity;
+
+	return vd*Flock.Normalize();
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
@@ -626,7 +650,17 @@ vec2 SIMAgent::Flocking()
 */
 vec2 SIMAgent::Leader()
 {
-	//TODO figure out who is the leader
+	if (0) 
+	{
+		SIMAgent::Seek();
+	}
+	else
+	{
+		vec2 Leader = SIMAgent::KSeparate*Separation() + KCohesion*Cohesion();
+		thetad = atan2(Leader[1], Leader[0]);
+		vd = SIMAgent::MaxVelocity;
+
+		return vd*Leader.Normalize();
 	
 	}
 	/*********************************************
