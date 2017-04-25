@@ -233,19 +233,19 @@ void SIMAgent::InitValues()
 	SIMAgent::KNoise, SIMAgent::KWander, SIMAgent::KAvoid, SIMAgent::TAvoid, SIMAgent::RNeighborhood,
 	SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.
 	*********************************************/
-	Kv0 = 10.0;
-	Kp1 = -500.0;
-	Kv1 = 5.0;
+	Kv0 = 1.0;
+	Kp1 = -1.0;
+	Kv1 = 1.0;
 	KArrival = 0.01;
 	KDeparture = 5000.0;
 	KNoise = 0.0;
 	KWander = 0.0;
 	KAvoid = 0.0;
 	TAvoid = 20.0;
-	RNeighborhood = 100.0;
-	KSeparate = 100.0;
+	RNeighborhood = 1000.0;
+	KSeparate = 10.0;
 	KAlign = 5.0;
-	KCohesion = 0.1;
+	KCohesion = 10;
 
 
 }
@@ -518,6 +518,26 @@ vec2 SIMAgent::Avoid()
 */
 vec2 SIMAgent::Separation()
 {
+	vec2 sumPositions = vec2(0, 0);
+	for (auto agent : SIMAgent::agents)
+	{
+		if (agent == this)
+			continue;
+		if ((agent->GPos - this->GPos).SqrLength() < RNeighborhood*RNeighborhood) //loops through every agent in the neighborhood
+		{
+
+			sumPositions -= (agent->GPos - this->GPos).Normalize(); //Generate a vector based off the distance between all agents and your current position, then normalize it.
+		}
+	}
+	thetad = atan2(sumPositions[1], sumPositions[0]); //direction
+	vd = SIMAgent::MaxVelocity;
+
+	return vd*sumPositions.Normalize(); //new vector
+
+
+	//vec2 tmp;
+
+	//return tmp;
 
 	/*********************************************
 	// TODO: Add code here
@@ -535,12 +555,30 @@ vec2 SIMAgent::Separation()
 */
 vec2 SIMAgent::Alignment()
 {
+	vec2 sumPositions = vec2(0, 0);
+	for (auto agent : SIMAgent::agents)
+	{
+		if (agent == this)
+			continue;
+		if ((agent->GPos - this->GPos).SqrLength() < RNeighborhood*RNeighborhood) //loops through every agent in the neighborhood
+		{
+
+			sumPositions += (agent->v0).Normalize(); //Generate a vector based off the distance between all agents and your current position, then normalize it.
+		}
+	}
+	thetad = atan2(sumPositions[1], sumPositions[0]); //direction
+	vd = SIMAgent::MaxVelocity;
+
+	return vd*sumPositions.Normalize(); //new vector
+	
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	
 
-	return tmp;
+	//vec2 tmp;
+
+	//return tmp;
 }
 
 /*
@@ -556,10 +594,9 @@ vec2 SIMAgent::Cohesion()
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	//vec2 tmp;
 
-
-	return tmp;
+	//return tmp;
 }
 
 /*
@@ -574,9 +611,9 @@ vec2 SIMAgent::Flocking()
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	//vec2 tmp;
 
-	return tmp;
+	//return tmp;
 }
 
 /*
@@ -589,10 +626,13 @@ vec2 SIMAgent::Flocking()
 */
 vec2 SIMAgent::Leader()
 {
+	//TODO figure out who is the leader
+	
+	}
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	//vec2 tmp;
 
-	return tmp;
+	//return tmp;
 }
