@@ -5,7 +5,7 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 # Homework 3
-![Flee.png](&raw=1)
+![Weirdartthing.png](https://www.dropbox.com/s/wkox40u0l7gkmbs/weird%20art%20thing.png?dl=0&raw=1)
 
 # Introduction
 3D Agent vectors were created to simulate simple human behaviors like individual and group movement to analyze crowd dynamics. Each agent was coded to exhibit certain goals and behaviors that are activated through user selection in the GUI. The agents that were chosen mimic typical human movement and speed during normal walking activity. The purpose of this project is to explore various interactions that occur as agents perform seek, flee, arrival, departure, wander, obstacle avoidance, separation, cohesion, alignment, flocking, and leader following behaviors in a controlled environment to aid in the comprehension of agent-based modeling. The creation of these behaviors and their results are discussed below.
