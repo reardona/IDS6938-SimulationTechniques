@@ -1,8 +1,9 @@
 ﻿**USING 1 DAY PASS***
-**DUE 4_25(**
+**DUE 4_25**
 # Homework 3 : Agent based Simulation Assignment 
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
+
 
 ![Weirdartthing.png](https://www.dropbox.com/s/wkox40u0l7gkmbs/weird%20art%20thing.png?dl=0&raw=1)
 
@@ -151,6 +152,19 @@ Flocking & Leader Following: By using the previous behaviors described above, la
 
 # Part 2: Simulating a simple pedestrian flow
 a.	Create a maze:
+I created a maze based off of the capital city of the Night Elves in the fictional world of World of Warcraft. 
+
+![D1.png](https://www.dropbox.com/s/wbfqp26hkp44q0x/D1.jpg?dl=0&raw=1)
+![D2.png](https://www.dropbox.com/s/czvgfl6fqw6wk60/D2.jpg?dl=0&raw=1)
+
+2 different agents were simulated: The tall and fast Night Elves, and the short and slow Dwarfs. Their movements were analyzed as they navigated through the maze of Darnassus.
+
+![editor.png](https://www.dropbox.com/s/r5arfzpeir74z0p/editor.png?dl=0&raw=1)
+![3da.png](https://www.dropbox.com/s/os3lyfkbc8tbpak/3da.png?dl=0&raw=1)
+
+According to the PDM, the Dwarfs have more cluster areas compared to the Night Elves and exhibit less path flow spikes compared to that of the night elves. This is likely due to the Dwarfs movement speed decrease as they seek their target, compared to the faster night elves.
+![PDM.png](https://www.dropbox.com/s/avf4fxv0qo5rl7t/PDM.png?dl=0&raw=1)
+![ET.png](https://www.dropbox.com/s/3ew19lybslt5b5s/ET.png?dl=0&raw=1)
 
 b.	Model and analyze a building:
 
@@ -178,19 +192,17 @@ I chose to model the city based off my own personal experience to include areas 
 ![Tyrandepng](https://www.dropbox.com/s/pf3azxi0wuc4d27/Tyrande.png?dl=0&raw=1)
 ![Dwarf.png](https://www.dropbox.com/s/v1wse8543dy6qw0/Dwarf.gif?dl=0&raw=1)
 
-2 simulations were run. The first was modeled based of observations from the middle of an expansion, and the second was changed to account for the increased need to utilize the Auction House, Bank, the Mailbox, and the Weapons Master after a new expansion due to the level cap increase and change in item values. 
+2 simulations were run. The first was modeled based of observations from the middle of an expansion with normal activity. The second simulation was modified to account for changes in behavior due to a new expansion. For example, there will be an increased need to use the services at the Auction House, Bank, the Mailbox, and the Weapons Master due to the level cap increase and change in item values. 
 
 ![Sim1.png](https://www.dropbox.com/s/j2xtx40p16rxjke/Sim1.png?dl=0&raw=1)
 ![Sim2.png](https://www.dropbox.com/s/xgntl96vyjjgplb/Sim2.png?dl=0&raw=1)
 ![2d.png](https://www.dropbox.com/s/bctctf8s4g713ls/2d.png?dl=0&raw=1)
 ![3D.png](https://www.dropbox.com/s/e1ese520utzziz7/3D.png?dl=0&raw=1)
 
-It is hypothesized that traffic surrounding these ‘hot’ areas will increase along with queue times. 
-
-Aligning with my hypothesis, there is an increase in traffic flow for the Bank, Auction House, Mailbox and Weapons Master. 
+It is hypothesized that traffic surrounding these high value areas will increase with the new expansion. After running both simulations for an hour, data was generated on traffic flow outside of all services and a Pedestrian Density Map was also created. The traffic flow graph for the new expansion show an increase in traffic flow for the Bank, Auction House, Mailbox and Weapons Master compared to the graph for normal activity.
 ![NormalD.png](https://www.dropbox.com/s/7ds8dgi9fr4bstb/NormalD.png?dl=0&raw=1)
 ![IncreasedD.png](https://www.dropbox.com/s/gfs3zdf8qnnxivy/IncreasedD.png?dl=0&raw=1)
-The pedestrian density map also shows a slight increase around the pathways leading towards the Weapons Master, Auction House, and Bank. 
+The pedestrian density map also shows a slight increase around the pathways leading towards the Weapons Master, Auction House, and Bank. Therefore the results were successful in supporting my hypothesis. 
 ![PDFC.png](https://www.dropbox.com/s/mc2m2rof4cjlg1i/PDFC.png?dl=0&raw=1)
 ![PDFCE.png](https://www.dropbox.com/s/mvboasz9s3tqu20/PDFCE.png?dl=0&raw=1)
 
