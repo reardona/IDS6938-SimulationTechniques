@@ -5,6 +5,7 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 
+
 ![Weirdartthing.png](https://www.dropbox.com/s/wkox40u0l7gkmbs/weird%20art%20thing.png?dl=0&raw=1)
 
 # Introduction
@@ -152,17 +153,17 @@ Flocking & Leader Following: By using the previous behaviors described above, la
 
 # Part 2: Simulating a simple pedestrian flow
 a.	Create a maze:
-I created a maze based off of the capital city of the Night Elves in the fictional world of World of Warcraft. 
+I created a maze based off the capital city of the Night Elves in the fictional world of World of Warcraft. 
 
 ![D1.png](https://www.dropbox.com/s/wbfqp26hkp44q0x/D1.jpg?dl=0&raw=1)
 ![D2.png](https://www.dropbox.com/s/czvgfl6fqw6wk60/D2.jpg?dl=0&raw=1)
+2 different agents were simulated: The tall and fast Night Elves, and the short and slow Dwarfs. Their movements were analyzed as they navigated through the maze of Darnassus in order to find the Temple of the Moon, aka the center of all night elf spiritual life.
 
-2 different agents were simulated: The tall and fast Night Elves, and the short and slow Dwarfs. Their movements were analyzed as they navigated through the maze of Darnassus.
-
+![tom.png](https://www.dropbox.com/s/95cleusdbumcaiv/tom.jpeg?dl=0&raw=1)
 ![editor.png](https://www.dropbox.com/s/r5arfzpeir74z0p/editor.png?dl=0&raw=1)
 ![3da.png](https://www.dropbox.com/s/os3lyfkbc8tbpak/3da.png?dl=0&raw=1)
 
-According to the PDM, the Dwarfs have more cluster areas compared to the Night Elves and exhibit less path flow spikes compared to that of the night elves. This is likely due to the Dwarfs movement speed decrease as they seek their target, compared to the faster night elves.
+According to the PDM, the Dwarfs have more cluster areas and exhibit less path flow spikes compared to the night elves. This is likely due to the decreased movement speed towards their target compared to the faster night elves.
 ![PDM.png](https://www.dropbox.com/s/avf4fxv0qo5rl7t/PDM.png?dl=0&raw=1)
 ![ET.png](https://www.dropbox.com/s/3ew19lybslt5b5s/ET.png?dl=0&raw=1)
 
@@ -206,4 +207,7 @@ The pedestrian density map also shows a slight increase around the pathways lead
 ![PDFC.png](https://www.dropbox.com/s/mc2m2rof4cjlg1i/PDFC.png?dl=0&raw=1)
 ![PDFCE.png](https://www.dropbox.com/s/mvboasz9s3tqu20/PDFCE.png?dl=0&raw=1)
 
-
+Acknowledgments: 
+Thank you ferrets for helping me get through the semester. You guys are the real mvps.
+![pup1.png](https://www.dropbox.com/s/8vf4d6wa6bb0u9h/pup1.jpg?dl=0&raw=1)
+![pup2.png](https://www.dropbox.com/s/94wxljgxsz0ap3e/pup2.jpg?dl=0&raw=1)
