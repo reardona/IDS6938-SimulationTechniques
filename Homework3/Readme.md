@@ -3,11 +3,11 @@
 # Homework 3 : Agent based Simulation Assignment 
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
-# Homework 3
+
 ![Weirdartthing.png](https://www.dropbox.com/s/wkox40u0l7gkmbs/weird%20art%20thing.png?dl=0&raw=1)
 
 # Introduction
-3D Agent vectors were created to simulate simple human behaviors like individual and group movement to analyze crowd dynamics. Each agent was coded to exhibit certain goals and behaviors that are activated through user selection in the GUI. The agents that were chosen mimic typical human movement and speed during normal walking activity. The purpose of this project is to explore various interactions that occur as agents perform seek, flee, arrival, departure, wander, obstacle avoidance, separation, cohesion, alignment, flocking, and leader following behaviors in a controlled environment to aid in the comprehension of agent-based modeling. The creation of these behaviors and their results are discussed below.
+3D Agent vectors were created to simulate simple human behaviors like individual and group movement to analyze crowd dynamics. Each agent was coded to exhibit certain goals and behaviors that are activated through user selection in the GUI. The agents that were chosen mimic typical human movement and speed during normal walking activity. The purpose of this project is to explore how various interactions occur as agents perform seek, flee, arrival, departure, wander, obstacle avoidance, separation, cohesion, alignment, flocking, and leader following behaviors in a controlled environment as well as facilitate the comprehension of agent-based modeling. The creation of these behaviors and their results are discussed below.
 ___
 # Part 1: Behaviors
 
@@ -154,9 +154,9 @@ a.	Create a maze:
 
 b.	Model and analyze a building:
 
-This simulation models the everyday activity occurring inside a favored city of mine that I’ve also lost thousands of virtual hours to; Stormwind City. 
+This simulation models the everyday activity occurring inside a favorite city of mine that I’ve also lost thousands of virtual hours to; Stormwind City. 
 
-|![SW1.png](https://www.dropbox.com/s/16ew8wexjol0zn1/SW1.jpg?dl=0&raw=1)
+![SW1.png](https://www.dropbox.com/s/16ew8wexjol0zn1/SW1.jpg?dl=0&raw=1)
 ![SW5.png](https://www.dropbox.com/s/k3tq4io8q1kfmk4/SW5.jpg?dl=0&raw=1)
 ![SW2.png](https://www.dropbox.com/s/4jmvqaidavs6069/SW2.jpg?dl=0&raw=1)
 
@@ -174,10 +174,24 @@ Various businesses and services operate inside this city such as training center
 I chose to model the city based off my own personal experience to include areas of high interest to see how the traffic changes according to major changes in the game, in order to explore their effects on queue times and traffic density. 
 
  4 major queue areas were simulated; Alchemy Training, The Bank, The Innkeeper, and The Auction House. I varied their probabilities based on my own observations in the game, with a lower probability of a player going to the Alchemy Trainer and Innkeeper, and a higher probability of a player going to the Bank and the Auction House. Additionally, 4 NPCs or self service operations were simulated; the Stable Master, the Mailbox, the Cooking Trainer, and the Weapons Master. Both the Stable Master and the Mailbox have a higher probability of being a target than the Cooking Trainer and Weapons Master. 2 different agents were also created to serve as my general population operating inside Stormwind City. While all Alliance races have access to this city, I chose to model two of my favorite races, Night Elfs and Dwarfs. Since Night Elfs have a significantly taller stature than their Dwarf companions, their base walking speed is faster and they will reach their targets faster than the Dwarfs, who are shorter and much stouter.
-|Night Elf|Dwarf|
-|---|---|
-|![Tyrandepng](https://www.dropbox.com/s/pf3azxi0wuc4d27/Tyrande.png?dl=0&raw=1)|![Brann-Bronzebeard2.png](https://www.dropbox.com/s/kfu2xrmb7eiq1zv/Brann-Bronzebeard2.jpg?dl=0&raw=1)|
 
-2 simulations were run. The first was modeled based of observations from the middle of an expansion, and the second was changed to account for the increased need to utilize the Auction House, Bank, and the Weapons Master after a new expansion due to the level cap increase and change in item values. It is hypothesized that traffic surrounding these ‘hot’ areas will increase along with queue times. 
+![Tyrandepng](https://www.dropbox.com/s/pf3azxi0wuc4d27/Tyrande.png?dl=0&raw=1)
+![Dwarf.png](https://www.dropbox.com/s/v1wse8543dy6qw0/Dwarf.gif?dl=0&raw=1)
+
+2 simulations were run. The first was modeled based of observations from the middle of an expansion, and the second was changed to account for the increased need to utilize the Auction House, Bank, the Mailbox, and the Weapons Master after a new expansion due to the level cap increase and change in item values. 
+
+![Sim1.png](https://www.dropbox.com/s/j2xtx40p16rxjke/Sim1.png?dl=0&raw=1)
+![Sim2.png](https://www.dropbox.com/s/xgntl96vyjjgplb/Sim2.png?dl=0&raw=1)
+![2d.png](https://www.dropbox.com/s/bctctf8s4g713ls/2d.png?dl=0&raw=1)
+![3D.png](https://www.dropbox.com/s/e1ese520utzziz7/3D.png?dl=0&raw=1)
+
+It is hypothesized that traffic surrounding these ‘hot’ areas will increase along with queue times. 
+
+Aligning with my hypothesis, there is an increase in traffic flow for the Bank, Auction House, Mailbox and Weapons Master. 
+![NormalD.png](https://www.dropbox.com/s/7ds8dgi9fr4bstb/NormalD.png?dl=0&raw=1)
+![IncreasedD.png](https://www.dropbox.com/s/gfs3zdf8qnnxivy/IncreasedD.png?dl=0&raw=1)
+The pedestrian density map also shows a slight increase around the pathways leading towards the Weapons Master, Auction House, and Bank. 
+![PDFC.png](https://www.dropbox.com/s/mc2m2rof4cjlg1i/PDFC.png?dl=0&raw=1)
+![PDFCE.png](https://www.dropbox.com/s/mvboasz9s3tqu20/PDFCE.png?dl=0&raw=1)
 
 
